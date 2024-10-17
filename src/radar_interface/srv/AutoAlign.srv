@@ -1,0 +1,4 @@
+float64 max_corr_dist
+int64 max_iteration
+bool inherit_last
+---

@@ -1,0 +1,11 @@
+build/
+install/
+log/
+.cache/
+.vscode/settings.json
+.vscode/c_cpp_properties.json
+*.pyc
+rosbag2*/
+
+*/__pycache__
+__pycache__/*

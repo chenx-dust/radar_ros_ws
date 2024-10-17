@@ -1,0 +1,429 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build All"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Release",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Release"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-clean-cache",
+                "--cmake-clean-first",
+                "--cmake-target",
+                "clean",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Clean & Configure"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "pc_detector",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build pc_detector"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "pc_aligner",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-clean-cache",
+                "--cmake-clean-first",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build pc_aligner"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "livox_v1_lidar",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build livox_v1_lidar"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "livox_v2_lidar",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build livox_v2_lidar"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "radar_interface",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build radar_interface"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "target_visualizer",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build target_visualizer"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "result_visualizer",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build result_visualizer"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "nn_detector",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build nn_detector"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "img_recognizer",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build img_recognizer"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "target_matcher",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build target_matcher"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "judge_bridge",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build judge_bridge"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "hik_camera",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build hik_camera"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "dv_trigger",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build dv_trigger"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "radar_bringup",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build radar_bringup"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "radar_supervisor",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build radar_supervisor"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "radar_utils",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build radar_utils"
+        },
+        {
+            "type": "colcon",
+            "args": [
+                "build",
+                "--packages-select",
+                "target_multiplexer",
+                "--symlink-install",
+                "--event-handlers",
+                "console_cohesion+",
+                "console_direct+",
+                "--base-paths",
+                "${workspaceFolder}",
+                "--cmake-args",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-DCMAKE_BUILD_TYPE=Debug",
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "Radar: Build target_multiplexer"
+        },
+    ]
+}

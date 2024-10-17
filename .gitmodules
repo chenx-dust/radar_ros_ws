@@ -1,0 +1,52 @@
+[submodule "pc_detector"]
+	path = src/pc_detector
+	url = https://gitlab.ngxy.team/algo/radar/pc_detector.git
+	branch = ros2
+[submodule "radar_interface"]
+	path = src/radar_interface
+	url = https://gitlab.ngxy.team/algo/radar/radar_interface.git
+[submodule "pc_aligner"]
+	path = src/pc_aligner
+	url = https://gitlab.ngxy.team/algo/radar/pc_aligner.git
+[submodule "radar_bringup"]
+	path = src/radar_bringup
+	url = https://gitlab.ngxy.team/algo/radar/radar_bringup.git
+[submodule "target_visualizer"]
+	path = src/target_visualizer
+	url = https://gitlab.ngxy.team/algo/radar/target_visualizer.git
+[submodule "nn_detector"]
+	path = src/nn_detector
+	url = https://gitlab.ngxy.team/algo/radar/nn_detector.git
+[submodule "img_recognizer"]
+	path = src/img_recognizer
+	url = https://gitlab.ngxy.team/algo/radar/img_recognizer.git
+[submodule "target_matcher"]
+	path = src/target_matcher
+	url = https://gitlab.ngxy.team/algo/radar/target_matcher.git
+[submodule "result_visualizer"]
+	path = src/result_visualizer
+	url = https://gitlab.ngxy.team/algo/radar/result_visualizer.git
+[submodule "judge_bridge"]
+	path = src/judge_bridge
+	url = https://gitlab.ngxy.team/algo/radar/judge_bridge.git
+[submodule "hik_camera"]
+	path = src/hik_camera
+	url = https://gitlab.ngxy.team/algo/radar/hik_camera.git
+[submodule "radar_supervisor"]
+	path = src/radar_supervisor
+	url = https://gitlab.ngxy.team/algo/radar/radar_supervisor.git
+[submodule "livox_v2_lidar"]
+	path = src/livox_v2_lidar
+	url = https://gitlab.ngxy.team/algo/radar/livox_v2_lidar.git
+[submodule "livox_v1_lidar"]
+	path = src/livox_v1_lidar
+	url = https://gitlab.ngxy.team/algo/radar/livox_v1_lidar.git
+[submodule "target_multiplexer"]
+	path = src/target_multiplexer
+	url = https://gitlab.ngxy.team/algo/radar/target_multiplexer.git
+[submodule "radar_utils"]
+	path = src/radar_utils
+	url = https://gitlab.ngxy.team/algo/radar/radar_utils.git
+[submodule "dv_trigger"]
+	path = src/dv_trigger
+	url = https://gitlab.ngxy.team/algo/radar/dv_trigger.git

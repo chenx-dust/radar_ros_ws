@@ -1,0 +1,15 @@
+build/
+install/
+log/
+.cache/
+.vscode/settings.json
+.vscode/c_cpp_properties.json
+*.pyc
+*.mkv
+rosbag2*/
+output.pcd
+serial_recorder/
+dataset*/
+
+*/__pycache__
+__pycache__/*

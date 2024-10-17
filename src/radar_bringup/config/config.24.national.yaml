@@ -1,0 +1,170 @@
+/radar/pc_aligner:
+  ros__parameters:
+    sample_lidar: 'lidar_hap'
+    # 初始化采样点云数目
+    init_sample: 1000000
+    # 对齐器采样模型点数
+    mesh_sample: 1000000
+    # 对齐器裁剪盒 单位: m
+    crop_box.min: [0.5, 0.150, -0.2]
+    crop_box.max: [27.5, 14.850, 1.5]
+    # 最大对应点距离 单位: m
+    max_corr_dist: 0.5
+    # 最大迭代次数
+    max_iteration: 20
+    # 启用预选择点
+    use_preselect: True
+    # 启动时手动对齐
+    startup_manual_align: True
+
+    vis_auto: False
+
+    manual_crop.min: [0., -10., -10.]
+    manual_crop.max: [30., 15., 10.]
+
+    mesh: "24_bg2align_fix1.stl"
+    init_translate: [0.0, 0.0, 0.0]
+
+/radar/pc_detector:
+  ros__parameters:
+    # 缓冲区帧数
+    node.buffer_frame_size: 12
+    node.lidars: ['lidar_hap', 'lidar_mid70']
+
+    mesh.mesh_ori: "24_bg2align_fix1.stl"
+    mesh.mesh_filter: "24_bg2filter_fix1.stl"
+    mesh.init_translate: [0.0, 0.0, 0.0]
+
+    # 体素网格滤波器体素大小 单位: m
+    voxel_grid.voxel_size: 0.08
+    # 膨胀的核半径大小 单位: 体素
+    voxel_grid.dilate_size: 1
+    # 体素网格盒大小 单位: m
+    voxel_grid.size.min: [0.150, 0.150, 0.]
+    voxel_grid.size.max: [27.850, 14.850, 1.500]
+    # 场地模型占用扩展大小 单位: m
+    voxel_grid.occupy_expand: 0.3
+
+    # 跟踪延迟长度 单位: 帧
+    target_map.last_frames: 120
+    # 跟踪 (马氏) 距离阈值
+    target_map.dist_thres: 6.0
+    # # 跟踪合并跟丢阈值 单位: 帧
+    # target_map.combine_limit: 15
+    # # 跟踪合并 (马氏) 距离阈值
+    # target_map.combine_dist: 8.0
+    # 强制合并距离阈值 单位: m
+    target_map.force_combine_dist: 0.5
+    # 错误合并判定跟丢阈值 单位: 帧
+    target_map.separate_limit: 8
+    # 跟踪框相接阈值 单位: m
+    target_map.cc_thres: 0.05
+    # 初始跟踪框预设丢失帧计数 单位: 帧
+    target_map.init_lost: 20
+    # 投影后 Z 轴高度 单位: m
+    target_map.project_z: 0.2
+
+    # Z 方向压缩比例
+    clustering.z_zip: 0.2
+    # (普通参数) DBSCAN 聚类算法的聚类半径 单位: m
+    clustering.normal.eps: 0.3
+    # (普通参数) DBSCAN 聚类算法的最少点阈值
+    clustering.normal.min_points: 8
+    # (宽松参数) DBSCAN 聚类算法的聚类半径 单位: m
+    clustering.loose.eps: 0.4
+    # (宽松参数) DBSCAN 聚类算法的最少点阈值
+    clustering.loose.min_points: 6
+    # (宽松参数) 进行宽松聚类的扩展边界 单位: m
+    clustering.loose.box_expand: 0.2
+    # (严格参数) DBSCAN 聚类算法的聚类半径 单位: m
+    clustering.strict.eps: 0.15
+    # (严格参数) DBSCAN 聚类算法的最少点阈值
+    clustering.strict.min_points: 12
+
+    # 预测协方差矩阵
+    kalman_filter.q.position: 1.0e-7
+    kalman_filter.q.velocity: 5.0e-6
+    kalman_filter.q.pos_vel: 5.0e-6
+    # 观测协方差矩阵
+    kalman_filter.r.position: 5.0e-2
+    kalman_filter.r.velocity: 5.0e-2
+    # 预测积累协方差更新比率
+    kalman_filter.cov_factor: 2.5
+    # 速度衰减比率
+    kalman_filter.decay_rate: 1.0e-4
+    # 速递限制 单位: m/s
+    kalman_filter.max_velocity: 10.0
+    kalman_filter.stop_p_time: 40
+
+/radar/hik_4mm/hik_camera:
+  ros__parameters:
+    sn: J67763845
+    camera_info_url: "package://hik_camera/config/n4mm.yaml"
+    frame_rate: 30.0
+    exposure_time: 6000.0
+    rotate_180: True
+
+/radar/hik_4mm/img_recognizer:
+  ros__parameters:
+    sync_queue_size: 20
+    crop_side_length: 1000.0
+    img_compressed: False
+    jigsaw_size: 3
+    img_size: 640
+    armor_detector_config: "models/v5.1_R803G.toml"
+    enable_imshow: True
+
+/radar/hik_8mm/hik_camera:
+  ros__parameters:
+    sn: J87631625
+    camera_info_url: "package://hik_camera/config/n8mm.yaml"
+    frame_rate: 30.0
+
+/radar/hik_8mm/img_recognizer:
+  ros__parameters:
+    sync_queue_size: 20
+    crop_side_length: 2800.0
+    img_compressed: False
+    jigsaw_size: 3
+    img_size: 640
+    armor_detector_config: "models/v5.1_R803G.toml"
+    enable_imshow: True
+
+/radar/hik_12mm/hik_camera:
+  ros__parameters:
+    sn: J37877236
+    camera_info_url: "package://hik_camera/config/n12mm.yaml"
+    frame_rate: 30.0
+
+/radar/hik_12mm/img_recognizer:
+  ros__parameters:
+    sync_queue_size: 20
+    crop_side_length: 4200.0
+    img_compressed: False
+    jigsaw_size: 3
+    img_size: 640
+    armor_detector_config: "models/v5.1_R803G.toml"
+    enable_imshow: True
+
+/radar/matcher:
+  ros__parameters:
+    img_ns: ['/radar/hik_4mm', '/radar/hik_8mm', '/radar/hik_12mm']
+    value_max: 10000
+    value_inc: 40
+    value_dec: 10
+    value_fail_dec: 1
+    value_match_limit: 100
+    fail_dec_min: 100
+    feedback_inc: 1000
+    feedback_dec: 500
+    pos_reinforce_inc: 5
+    pos_reinforce_max: 120
+    pos_reinforce_timeout: 200
+    pub_timeout: 200
+    vis_per_pub: 1
+    uncertainty_limit: 40
+
+/radar/judge_bridge:
+  ros__parameters:
+    enable_recorder: True
+

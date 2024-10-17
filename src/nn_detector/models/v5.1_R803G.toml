@@ -1,0 +1,27 @@
+type = "V5.1"
+
+INPUT_W = 640
+INPUT_H = 640
+
+NUM_CLASSES = 8
+NUM_COLORS = 4
+NUM_TSIZES = 2
+
+BBOX_CONF_THRESH = 0.70
+NMS_THRESH = 0.8
+MERGE_THRESH = 0.8
+
+anchors = [
+    [4.0,5.0, 8.0,10.0, 13.0,16.0],
+    [23.0,29.0, 43.0,55.0, 73.0,105.0],
+    [146.0,217.0, 231.0,300.0, 335.0,433.0],
+    [4.0,5.0, 8.0,10.0, 13.0,16.0],
+]
+
+model_prefix = "models/v5.1_R803G/v5.1_R803G"
+
+# for drawing
+point_num = 4
+class_names = ["0", "1", "2", "3", "4", "5", "O", "Bs", "Bb"]
+color_names = ["B", "R", "N", "P"]
+tsize_names = ["[S]", "[L]"]

@@ -1,0 +1,14 @@
+type = "Trad"
+
+NUM_CLASSES = 13
+NUM_COLORS = 4
+
+class_names = ["Guard", "1", "2", "3", "4", "5", "Outpost", "BaseSmall", "BaseBig", "L3", "L4", "L5", "Negative"]
+color_names = ["B", "R", "N", "P"]
+
+binary_threshold = 0.7
+
+cnn_threshold = 0.5
+cnn_input_size = 32
+cnn_path = "models/trad/cnn.onnx"
+cnn_label = "models/trad/label.txt"

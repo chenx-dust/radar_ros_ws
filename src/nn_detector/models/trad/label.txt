@@ -1,0 +1,13 @@
+Guard
+1
+2
+3
+4
+5
+Outpost
+BaseSmall
+BaseBig
+L3
+L4
+L5
+Negative
